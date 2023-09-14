@@ -1,0 +1,25 @@
+{
+  "name": "01-html-css-js-lab",
+  "version": "1.0.0",
+  "description": "HTML, CSS, and JS intro lab",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iproduct/web-programming-2023.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "js",
+    "lab"
+  ],
+  "author": "Trayan Iliev",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/iproduct/web-programming-2023/issues"
+  },
+  "homepage": "https://github.com/iproduct/web-programming-2023#readme"
+}
