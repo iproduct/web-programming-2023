@@ -18,6 +18,7 @@ function PositionLogger(aPos) {
 }
 
 var pl1 = new PositionLogger(5);
+// console.log('Value: ' + pl1._position);
 console.log('Value: ' + pl1.position);
 pl1.position += 20;
 console.log('Value: ' + pl1.position);

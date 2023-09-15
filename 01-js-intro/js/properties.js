@@ -11,7 +11,7 @@ var coloredTriangle = Object.create(triangle, {
   name: {
     value: 'triangle',
     writable: true,
-    enumerable: true,
+    enumerable: false,
     configurable: true
   },
 });
