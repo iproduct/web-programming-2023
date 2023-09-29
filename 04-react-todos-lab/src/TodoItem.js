@@ -14,6 +14,8 @@ const TodoItem = ({ todo }) =>
     </span>
     <span className='TodoItem-right'>
         <span className='TodoItem-status'>{TodoStatus[todo.status]}</span>
+        <span className='TodoItem-button fas fa-circle-check ok'></span>
+        <span className='TodoItem-button fas fa-circle-xmark danger'></span>
     </span>
 </div>)
 

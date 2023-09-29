@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.error {
+  color: #f75e5e;
+  background-color: #fcb7b7;
+  border: 1px solid  #fc2828;
+  border-radius: 5px;
+  padding:  10px 40px;
+  font-size: 12pt;
+}
+
+
+.ok {
+  color: #57b850;
+}
+
+.danger {
+  color: #f75e5e;
+}

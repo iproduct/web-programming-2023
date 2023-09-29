@@ -1,0 +1,14 @@
+.TodoInput-form {
+    min-width: 600px;
+    margin-bottom: 30px;
+}
+
+.TodoInput-form input, .TodoInput-form select{
+    width: 100%;
+}
+
+.TodoInput-form button {
+    padding: 10px;
+    margin: 10px;
+}
+
