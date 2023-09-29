@@ -1,12 +1,12 @@
+import TodoItem from './TodoItem';
 import './TodoList.css';
-import { toIsoDate } from "./todo-model";
 
 const TodoList = ({ todos }) =>
-(<ul className="TodoList-container">
+(<div className="TodoList-container">
     {todos.map(
-        todo => (<li>{todo.id}: {todo.text} - {toIsoDate(todo.deadline)}</li>)
+        todo => (<TodoItem key={todo.id} todo={todo} />)
     )}
-</ul>)
+</div>)
 
 
 export default TodoList;
