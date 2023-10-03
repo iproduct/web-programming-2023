@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost/api/todos';
+export const BASE_URL = 'http://localhost:9000/todos';
 
 class ApiClient {
     constructor(base_url){

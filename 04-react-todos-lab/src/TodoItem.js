@@ -9,7 +9,7 @@ const TodoItem = ({ todo, onCompleted, onCanceled }) =>
             {todo.text}
         </span>
         <span className='TodoItem-date'>
-            {toIsoDate(todo.deadline)}
+            {todo.deadline}
         </span>
     </span>
     <span className='TodoItem-right'>
