@@ -16,8 +16,13 @@ function TodoApp() {
             .catch(err => setError(err));
     }, []);
 
-    function addTodo(todo) {
-        setTodos(state => [...state, todo])
+    async function addTodo(todo) {
+        try {
+            const created = await API_CLIENT.create(todo)
+            setTodos(state => [...state, created])
+        } catch (err) {
+            setError(err);
+        }
     }
     function completeTodo(todo) {
         setTodos(tds => tds.map(td => td.id === todo.id ? ({ ...td, status: Completed }) : td))

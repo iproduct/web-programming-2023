@@ -1,32 +1,50 @@
 {
-    "todos": [
-        {
-            "id": 1,
-            "text": "Create React project using create-react-app",
-            "deadline": "2023-10-03",
-            "status": 1
-        },
-        {
-            "id": 2,
-            "text": "Create TodosApp component",
-            "deadline": "2023-10-05",
-            "status": 0
-        },
-        {
-            "id": 3,
-            "text": "Create TodoList component",
-            "deadline": "2023-10-07",
-            "status": 0
-        }
-    ],
-    "comments": [
-        {
-            "id": 1,
-            "body": "some comment",
-            "postId": 1
-        }
-    ],
-    "profile": {
-        "name": "typicode"
+  "todos": [
+    {
+      "id": 1,
+      "text": "Create React project using create-react-app",
+      "deadline": "2023-10-03",
+      "status": 1
+    },
+    {
+      "id": 2,
+      "text": "Create TodosApp component",
+      "deadline": "2023-10-05",
+      "status": 0
+    },
+    {
+      "id": 3,
+      "text": "Create TodoList component",
+      "deadline": "2023-10-07",
+      "status": 0
+    },
+    {
+      "id": 4,
+      "text": "Create TodoItem component",
+      "deadline": "2023-10-10",
+      "status": 0
+    },
+    {
+      "id": 5,
+      "text": "Do the Google Books API homework",
+      "deadline": "2023-10-10",
+      "status": 0
+    },
+    {
+      "text": "Implement course project",
+      "deadline": "2023-10-17",
+      "status": 0,
+      "id": 6
     }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }

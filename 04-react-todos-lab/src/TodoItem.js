@@ -1,5 +1,5 @@
 import './TodoItem.css'
-import { TodoStatus, toIsoDate } from "./todo-model";
+import { TodoStatus} from "./todo-model";
 
 const TodoItem = ({ todo, onCompleted, onCanceled }) =>
 (<div className="TodoItem">

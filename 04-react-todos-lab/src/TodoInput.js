@@ -13,7 +13,7 @@ const TodoInput = ({ onCreateTodo, onError }) => {
             onError(`All field are required`)
             return;
         }
-        const created = new Todo(text, new Date(deadline), status);
+        const created = new Todo(text, deadline, status);
         onCreateTodo(created);
         reset();
     }
