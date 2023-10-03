@@ -24,11 +24,30 @@ function TodoApp() {
             setError(err);
         }
     }
-    function completeTodo(todo) {
+    async function completeTodo(todo) {
+        try {
+            const index = todos.findIndex(td => td.id === todo.id);
+            if(index < 0) {
+                // eslint-disable-next-line no-throw-literal
+                throw `Todo with ID="${todo.id}" not found`;
+            }
+            const modified = { ...todos[index], status: Completed }
+            await API_CLIENT.update(modified);
+            setTodos(tds => tds.map(td => td.id === todo.id ? modified : td));
+        } catch (err) {
+            setError(err);
+        }
+
         setTodos(tds => tds.map(td => td.id === todo.id ? ({ ...td, status: Completed }) : td))
     }
-    function cancelTodo(todo) {
-        setTodos(tds => tds.filter(td => td.id !== todo.id))
+    async function cancelTodo(todo) {
+        try {
+            await API_CLIENT.deleteById(todo.id)
+            setTodos(tds => tds.filter(td => td.id !== todo.id))
+        } catch (err) {
+            setError(err);
+        }
+        
     }
     return (
         <div className="App">
