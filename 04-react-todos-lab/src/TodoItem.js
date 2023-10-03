@@ -1,7 +1,7 @@
 import './TodoItem.css'
 import { TodoStatus, toIsoDate } from "./todo-model";
 
-const TodoItem = ({ todo }) =>
+const TodoItem = ({ todo, onCompleted, onCanceled }) =>
 (<div className="TodoItem">
     <span className='TodoItem-left'>
         <span className='TodoItem-text'>
@@ -14,8 +14,8 @@ const TodoItem = ({ todo }) =>
     </span>
     <span className='TodoItem-right'>
         <span className='TodoItem-status'>{TodoStatus[todo.status]}</span>
-        <span className='TodoItem-button fas fa-circle-check ok'></span>
-        <span className='TodoItem-button fas fa-circle-xmark danger'></span>
+        <span className='TodoItem-button fas fa-circle-check ok' onClick={() => onCompleted(todo)}></span>
+        <span className='TodoItem-button fas fa-circle-xmark danger' onClick={() => onCanceled(todo)}></span>
     </span>
 </div>)
 

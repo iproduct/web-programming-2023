@@ -1,10 +1,10 @@
 import TodoItem from './TodoItem';
 import './TodoList.css';
 
-const TodoList = ({ todos }) =>
+const TodoList = ({ todos, ...rest }) =>
 (<div className="TodoList-container">
     {todos.map(
-        todo => (<TodoItem key={todo.id} todo={todo} />)
+        todo => (<TodoItem key={todo.id} todo={todo} {...rest} />)
     )}
 </div>)
 
