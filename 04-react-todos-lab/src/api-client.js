@@ -40,10 +40,11 @@ class ApiClient {
         try {
             const resp = await fetch(url, options);
             if(resp.status >= 400) {
-                return Promise.reject(resp.body);
+                return Promise.reject(resp.body instanceof Object ? JSON.stringify(resp.body): resp.body);
             }
+            return resp.json();
         } catch(error) {
-            return Promise.reject(error);
+            return Promise.reject(error instanceof Object ? error.message: error);
         }
     }
 }

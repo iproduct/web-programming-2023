@@ -1,17 +1,26 @@
 import './App.css';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MOCK_TODOS from './mock-todos';
 import TodoList from './TodoList';
 import TodoInput from './TodoInput';
 import { Completed } from './todo-model';
+import API_CLIENT from './api-client';
 
 function TodoApp() {
-    const [todos, setTodos] = useState(MOCK_TODOS)
+    const [todos, setTodos] = useState(MOCK_TODOS);
+    const [error, setError] = useState(undefined);
+
+    useEffect(() => {
+        API_CLIENT.findAll()
+            .then(tds => setTodos(tds))
+            .catch(err => setError(err));
+    }, []);
+
     function addTodo(todo) {
         setTodos(state => [...state, todo])
     }
     function completeTodo(todo) {
-        setTodos(tds => tds.map(td => td.id === todo.id ? ({...td, status: Completed}): td))
+        setTodos(tds => tds.map(td => td.id === todo.id ? ({ ...td, status: Completed }) : td))
     }
     function cancelTodo(todo) {
         setTodos(tds => tds.filter(td => td.id !== todo.id))
@@ -20,7 +29,8 @@ function TodoApp() {
         <div className="App">
             <header className="App-header">
                 <h2>React TODOs</h2>
-                <TodoInput onCreateTodo={addTodo} />
+                {error && (<div className="error">{error}</div>)}
+                <TodoInput onCreateTodo={addTodo} onError={(err) => setError(err)} />
                 <TodoList todos={todos} onCompleted={completeTodo} onCanceled={cancelTodo} />
             </header>
         </div>

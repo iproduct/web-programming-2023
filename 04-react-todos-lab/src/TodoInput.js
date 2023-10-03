@@ -1,17 +1,16 @@
 import './TodoInput.css'
 import { useState } from "react"
-import { Active, Canceled, Completed, Todo, TodoStatus, toIsoDate } from "./todo-model"
+import { Active, Canceled, Completed, Todo, TodoStatus} from "./todo-model"
 
-const TodoInput = ({ onCreateTodo }) => {
+const TodoInput = ({ onCreateTodo, onError }) => {
     const [text, setText] = useState('');
     const [deadline, setDeadline] = useState('');
     const [status, setStatus] = useState(Active);
-    const [error, setError] = useState(undefined);
 
     function submitTodo(event) {
         event.preventDefault();
         if (text.length === 0 || deadline.length === 0) {
-            setError(`All field are required`)
+            onError(`All field are required`)
             return;
         }
         const created = new Todo(text, new Date(deadline), status);
@@ -23,7 +22,7 @@ const TodoInput = ({ onCreateTodo }) => {
         setText('');
         setDeadline('');
         setStatus(Active);
-        setError(undefined);
+        onError(undefined);
     }
 
     return (
@@ -37,7 +36,6 @@ const TodoInput = ({ onCreateTodo }) => {
             </select>
             <button type="submit">Submit</button>
             <button type="reset">Reset</button>
-            {error && (<div className="error">{error}</div>)}
         </form>
     )
 }
