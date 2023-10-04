@@ -1,13 +1,12 @@
 import './App.css';
 import { useEffect, useState } from "react";
-import MOCK_TODOS from './mock-todos';
 import TodoList from './TodoList';
 import TodoInput from './TodoInput';
 import { Completed } from './todo-model';
 import API_CLIENT from './api-client';
 
 function TodoApp() {
-    const [todos, setTodos] = useState(MOCK_TODOS);
+    const [todos, setTodos] = useState([]);
     const [error, setError] = useState(undefined);
 
     useEffect(() => {
