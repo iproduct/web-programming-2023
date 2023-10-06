@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Creating React Project",
+      "content": "The easiest way to create rect application is to use create-react-app command line tool.",
+      "tags": [
+        "react",
+        "create",
+        "cra"
+      ],
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/539px-React-icon.svg.png",
+      "author": "Trayan Iliev",
+      "active": true
+    },
+    {
+      "id": 2,
+      "title": "Routing with React Router",
+      "content": "Client side routing allows your app to update the URL from a link click without making another request for another document from the server. Instead, your app can immediately render some new UI and make data requests with fetch to update the page with new information.",
+      "tags": [
+        "react",
+        "router",
+        "spa"
+      ],
+      "imageUrl": "https://res.cloudinary.com/practicaldev/image/fetch/s--Y7mZU0b1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/jf4dd0rblewq01ov71ms.png",
+      "author": "Trayan Iliev",
+      "active": true
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
