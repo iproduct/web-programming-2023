@@ -1,3 +1,7 @@
 nav .navlink {
     padding: 20px;
 }
+
+.active {
+    font-weight: bold;
+}

@@ -1,5 +1,5 @@
 import './SimpleRoutingApp.css';
-import { Link, RouterProvider, createBrowserRouter } from "react-router-dom";
+import {NavLink, RouterProvider, createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
     {
@@ -7,9 +7,21 @@ const router = createBrowserRouter([
         element: (
             <div>
                 <nav>
-                    <Link className="navlink" to="/">Home</Link>
-                    <Link className="navlink" to="/about">About Us</Link>
-                    <Link className="navlink" to="/posts">Posts</Link>
+                    <NavLink to="/" className={({ isActive }) =>
+                        "navlink " + (isActive ? "active" : "")
+                    }>
+                        Home
+                    </NavLink>
+                    <NavLink to="/about" className={({ isActive, isPending }) =>
+                        "navlink " + (isActive ? "active" : "")
+                    }>
+                        About Us
+                    </NavLink>
+                    <NavLink to="/posts" className={({ isActive, isPending }) =>
+                        "navlink " + (isActive ? "active" : "")
+                    }>
+                        Posts
+                    </NavLink>
                 </nav>
                 <h1>Home</h1>
                 <h2>Hello React Router</h2>
@@ -22,9 +34,21 @@ const router = createBrowserRouter([
         element: (
             <div>
                 <nav>
-                    <Link className="navlink" to="/">Home</Link>
-                    <Link className="navlink" to="/about">About Us</Link>
-                    <Link className="navlink" to="/posts">Posts</Link>
+                    <NavLink to="/" className={({ isActive }) =>
+                        "navlink " + (isActive ? "active" : "")
+                    }>
+                        Home
+                    </NavLink>
+                    <NavLink to="/about" className={({ isActive, isPending }) =>
+                        "navlink " + (isActive ? "active" : "")
+                    }>
+                        About Us
+                    </NavLink>
+                    <NavLink to="/posts" className={({ isActive, isPending }) =>
+                        "navlink " + (isActive ? "active" : "")
+                    }>
+                        Posts
+                    </NavLink>
                 </nav>
                 <h1>About</h1>
             </div>
@@ -34,10 +58,22 @@ const router = createBrowserRouter([
         path: "/posts",
         element: (
             <div>
-                <nav>
-                    <Link className="navlink" to="/">Home</Link>
-                    <Link className="navlink" to="/about">About Us</Link>
-                    <Link className="navlink" to="/posts">Posts</Link>
+               <nav>
+                    <NavLink to="/" className={({ isActive }) =>
+                        "navlink " + (isActive ? "active" : "")
+                    }>
+                        Home
+                    </NavLink>
+                    <NavLink to="/about" className={({ isActive, isPending }) =>
+                        "navlink " + (isActive ? "active" : "")
+                    }>
+                        About Us
+                    </NavLink>
+                    <NavLink to="/posts" className={({ isActive, isPending }) =>
+                        "navlink " + (isActive ? "active" : "")
+                    }>
+                        Posts
+                    </NavLink>
                 </nav>
                 <h1>Posts</h1>
             </div>
