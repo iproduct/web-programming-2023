@@ -4,13 +4,15 @@ import PostInput from './PostInput';
 import API_CLIENT from '../services/api-client';
 import PostsList from './PostsList';
 import { Outlet } from 'react-router-dom';
+import useIsLoading from '../hooks/useIsLoading';
 
 function PostsPage() {
     const [posts, setPosts] = useState([]);
     const [error, setError] = useState(undefined);
+    const [isLoadingPosts, loader] = useIsLoading();
 
     useEffect(() => {
-        API_CLIENT.findAll()
+        loader(API_CLIENT.findAll())
             .then(tds => setPosts(tds))
             .catch(err => setError(err));
     }, []);
@@ -51,6 +53,7 @@ function PostsPage() {
     return (
         <div className="PostsPage">
                 {error && (<div className="error">{error}</div>)}
+                {isLoadingPosts && <div>Loding posts ...</div>}
                 <PostInput onCreatePost={addPost} onError={(err) => setError(err)} />
                 <PostsList posts={posts} onCompleted={completePost} onCanceled={cancelPost} />
                 <Outlet />
